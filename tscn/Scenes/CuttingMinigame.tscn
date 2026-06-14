@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://byl24unfpwg2k"]
+
+[ext_resource type="Texture2D" uid="uid://bf5h5vhmvmc7o" path="res://Assets/Background.png" id="1_q14hl"]
+[ext_resource type="Texture2D" uid="uid://db3c5ch6v3xyh" path="res://Assets/CuttingBoard.png" id="2_l1tuc"]
+[ext_resource type="Texture2D" uid="uid://d2g04vh600nan" path="res://Assets/Steak.webp" id="3_ld87t"]
+[ext_resource type="Texture2D" uid="uid://defcwkyq7wc5q" path="res://Assets/Guideline.png" id="4_8akrr"]
+[ext_resource type="Texture2D" uid="uid://cjqd6xsdpoc60" path="res://Assets/Knife.png" id="5_vwb10"]
+[ext_resource type="Script" uid="uid://dd26k6esb2x5i" path="res://Scripts/CuttingMinigame/KnifeFunction.gd" id="6_kmf5q"]
+[ext_resource type="Script" uid="uid://dyjukvc7cbeo5" path="res://Scripts/CuttingMinigame/DisplayScore.gd" id="7_vanh3"]
+
+[node name="CuttingMinigame" type="Node2D" unique_id=373928647]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1866468595]
+offset_left = -597.0
+offset_top = -342.0
+offset_right = 614.0
+offset_bottom = 339.0
+texture = ExtResource("1_q14hl")
+
+[node name="CuttingBoard" type="Sprite2D" parent="." unique_id=2132959947]
+position = Vector2(1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_l1tuc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=425999495]
+
+[node name="CuttingItem" type="TextureRect" parent="." unique_id=1540234634]
+offset_left = -337.0
+offset_top = -271.0
+offset_right = 2395.0
+offset_bottom = 1777.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_ld87t")
+
+[node name="CuttingGuidline1" type="Sprite2D" parent="." unique_id=1063980576]
+position = Vector2(-119, 16)
+scale = Vector2(0.1, 0.45)
+texture = ExtResource("4_8akrr")
+
+[node name="CuttingGuidline2" type="Sprite2D" parent="." unique_id=1592010167]
+position = Vector2(16, 13)
+scale = Vector2(0.1, 0.45)
+texture = ExtResource("4_8akrr")
+
+[node name="CuttingGuidline3" type="Sprite2D" parent="." unique_id=1869857087]
+position = Vector2(160, 13)
+scale = Vector2(0.1, 0.45)
+texture = ExtResource("4_8akrr")
+
+[node name="Knife" type="Sprite2D" parent="." unique_id=1030357170]
+position = Vector2(380, -39)
+scale = Vector2(0.4, 0.5)
+texture = ExtResource("5_vwb10")
+script = ExtResource("6_kmf5q")
+
+[node name="Score" type="Label" parent="." unique_id=163574853]
+offset_left = -150.0
+offset_top = -326.0
+offset_right = -30.0
+offset_bottom = -216.0
+theme_override_font_sizes/font_size = 40
+script = ExtResource("7_vanh3")

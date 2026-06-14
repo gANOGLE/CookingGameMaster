@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://bjsgalvmtv5rn"]
+
+[ext_resource type="Script" uid="uid://ck43mnvwswlv8" path="res://Scripts/Global.gd" id="1_mbleo"]
+[ext_resource type="Texture2D" uid="uid://cyx4eegnf16gs" path="res://Assets/CustomerJank/Customer.webp" id="1_y6ruu"]
+[ext_resource type="Texture2D" uid="uid://m1dq11yc433w" path="res://Assets/CustomerJank/Bodies/Body1.webp" id="2_7tg77"]
+[ext_resource type="Texture2D" uid="uid://bwgmjservgddw" path="res://Assets/CustomerJank/ThinkingBubble.webp" id="2_h6gqs"]
+[ext_resource type="Script" uid="uid://dxekex47jq1lm" path="res://tscn/Scenes/CustomerBehavior.gd" id="3_m1eay"]
+[ext_resource type="Texture2D" uid="uid://gxam75m0k4qs" path="res://Assets/CustomerJank/Bodies/Body3.webp" id="3_s8ep0"]
+[ext_resource type="Texture2D" uid="uid://4b8myhpk5br6" path="res://Assets/CustomerJank/Bodies/Body2.webp" id="4_6cug2"]
+[ext_resource type="Texture2D" uid="uid://b6cpx7ev7jdaf" path="res://Assets/CustomerJank/Faces/Face2.webp" id="7_5qxwt"]
+[ext_resource type="Texture2D" uid="uid://cmvh277pfxd1p" path="res://Assets/CustomerJank/Hair/Hair1.webp" id="8_5qxwt"]
+[ext_resource type="Texture2D" uid="uid://dy2ofc10qa7y" path="res://Assets/CustomerJank/PossibleOrderIcons/Sandwich.webp" id="9_6cug2"]
+[ext_resource type="Texture2D" uid="uid://hdoj2025rao2" path="res://Assets/CustomerJank/Outfits/Outfit1.webp" id="11_6cug2"]
+[ext_resource type="Texture2D" uid="uid://b8uh8mk3784kj" path="res://Assets/Counter.webp" id="12_l56fm"]
+[ext_resource type="Texture2D" uid="uid://dorkk8n7hkfy0" path="res://Assets/Order/OrderList.webp" id="13_qj5ha"]
+[ext_resource type="Script" uid="uid://j8tn3idagvsd" path="res://tscn/Scenes/CustomerName.gd" id="14_qj5ha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l56fm"]
+atlas = ExtResource("3_s8ep0")
+region = Rect2(0, 0, 1116, 1488)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj5ha"]
+atlas = ExtResource("4_6cug2")
+region = Rect2(0, 0, 1116, 1488)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5kn1"]
+atlas = ExtResource("1_y6ruu")
+region = Rect2(100, 0, 1388, 1488)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsyb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7tg77")
+}],
+"loop": true,
+"name": &"One",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l56fm")
+}],
+"loop": true,
+"name": &"Three",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj5ha")
+}],
+"loop": true,
+"name": &"Two",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5kn1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbleo"]
+atlas = ExtResource("2_h6gqs")
+region = Rect2(100, 0, 1388, 1488)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1eay"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbleo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cug2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l56fm"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Restaurant" type="Node2D" unique_id=235576052]
+script = ExtResource("1_mbleo")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=752737080]
+
+[node name="Customer" type="AnimatedSprite2D" parent="." unique_id=918137326]
+position = Vector2(20.000002, 1)
+scale = Vector2(0.3454533, 0.3454533)
+sprite_frames = SubResource("SpriteFrames_hsyb0")
+animation = &"One"
+autoplay = "default"
+script = ExtResource("3_m1eay")
+
+[node name="Face" type="Sprite2D" parent="Customer" unique_id=1712902050]
+texture = ExtResource("7_5qxwt")
+
+[node name="InteractBox" type="Button" parent="Customer" unique_id=595570484]
+modulate = Color(1, 1, 1, 0)
+offset_left = -263.42203
+offset_top = -599.21277
+offset_right = 116.57797
+offset_bottom = 20.787231
+scale = Vector2(1.4631547, 2.0654404)
+text = "
+"
+
+[node name="OrderBubble" type="AnimatedSprite2D" parent="Customer" unique_id=1829839327]
+position = Vector2(280.7905, -5.789506)
+sprite_frames = SubResource("SpriteFrames_m1eay")
+
+[node name="AcknowledgeOrder" type="Button" parent="Customer/OrderBubble" unique_id=2095743363]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+offset_left = -16.0
+offset_top = -482.0
+offset_right = 1.0
+offset_bottom = -451.0
+scale = Vector2(25.107157, -8.459798)
+
+[node name="CurrentOrderIcon" type="Sprite2D" parent="Customer/OrderBubble" unique_id=1459390003]
+position = Vector2(188.15857, -593.4233)
+scale = Vector2(0.30526948, 0.30525666)
+texture = ExtResource("9_6cug2")
+
+[node name="Hair" type="Sprite2D" parent="Customer" unique_id=549062684]
+texture = ExtResource("8_5qxwt")
+
+[node name="Outfit" type="Sprite2D" parent="Customer" unique_id=1720145271]
+texture = ExtResource("11_6cug2")
+
+[node name="CustomerName" type="Label" parent="Customer" unique_id=1327514855]
+top_level = true
+offset_left = -79.0
+offset_top = -242.0
+offset_right = 46.0
+offset_bottom = -219.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6cug2")
+text = "E"
+label_settings = SubResource("LabelSettings_l56fm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Counter" type="Sprite2D" parent="." unique_id=733408737]
+z_index = 100
+position = Vector2(2.9999828, 5.5)
+scale = Vector2(0.86559135, 0.42540324)
+texture = ExtResource("12_l56fm")
+
+[node name="OrderList" type="Sprite2D" parent="." unique_id=595593047]
+z_index = 100
+position = Vector2(-407, 2)
+texture = ExtResource("13_qj5ha")
+
+[node name="Order" type="Button" parent="OrderList" unique_id=1470722383]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -95.0
+offset_top = -181.0
+offset_right = -87.0
+offset_bottom = -173.0
+scale = Vector2(27.879995, 7.4400024)
+script = ExtResource("14_qj5ha")
+
+[node name="CustomerName" type="Label" parent="OrderList/Order" unique_id=676984850]
+top_level = true
+z_index = 100
+layout_mode = 0
+offset_left = -506.0
+offset_top = -181.0
+offset_right = -466.0
+offset_bottom = -158.0
+scale = Vector2(2.6473064, 2.5085776)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Jack"
+
+[node name="OrderIcon" type="Sprite2D" parent="OrderList/Order" unique_id=1336201970]
+top_level = true
+z_index = 100
+position = Vector2(-336.00003, -146)
+scale = Vector2(0.09698343, 0.09698343)
+texture = ExtResource("9_6cug2")
