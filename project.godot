@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Global="*uid://ck43mnvwswlv8"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
 [input]
 
 CUTTING_MINIGAME_DEBUG={
@@ -34,7 +38,3 @@ CUTTING_MINIGAME_DEBUG={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")

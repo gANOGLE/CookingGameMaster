@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://buakavmr2ie6x"]
+
+[ext_resource type="Texture2D" uid="uid://b8uh8mk3784kj" path="res://Assets/Counter.webp" id="1_u3xuw"]
+
+[node name="AssemblyMinigame" type="Node2D" unique_id=1829674519]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1753007574]
+
+[node name="Counter" type="Sprite2D" parent="." unique_id=227270500]
+position = Vector2(11.9999695, -13)
+scale = Vector2(0.81317204, 0.48924732)
+texture = ExtResource("1_u3xuw")

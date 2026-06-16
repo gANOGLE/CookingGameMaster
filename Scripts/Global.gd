@@ -7,6 +7,8 @@ var SkinColor = 0
 var Face = 0
 var Hair = 0
 var Outfit = 0
+
+#MinigameStuff
 var distance_1
 var distance_2
 var distance_3

@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 func _start_cutting():
 	print("E")
 	get_parent().get_parent().add_child(new_scene)  # adds as child of current node
+	new_scene.z_index = 1000
 	new_scene.position = Vector2(0, 0)
