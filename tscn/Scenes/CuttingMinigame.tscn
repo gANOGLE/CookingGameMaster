@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://db3c5ch6v3xyh" path="res://Assets/CuttingBoard.png" id="2_l1tuc"]
 [ext_resource type="Texture2D" uid="uid://d2g04vh600nan" path="res://Assets/Steak.webp" id="3_ld87t"]
 [ext_resource type="Texture2D" uid="uid://defcwkyq7wc5q" path="res://Assets/Guideline.png" id="4_8akrr"]
+[ext_resource type="Script" uid="uid://bxfao8xkom1bh" path="res://tscn/Scenes/cutting_item.gd" id="4_l1tuc"]
 [ext_resource type="Texture2D" uid="uid://cjqd6xsdpoc60" path="res://Assets/Knife.png" id="5_vwb10"]
 [ext_resource type="Script" uid="uid://dd26k6esb2x5i" path="res://Scripts/CuttingMinigame/KnifeFunction.gd" id="6_kmf5q"]
+[ext_resource type="AudioStream" uid="uid://c72d0uivnf30w" path="res://Audio/KnifeChop.mp3" id="7_ld87t"]
 [ext_resource type="Script" uid="uid://dyjukvc7cbeo5" path="res://Scripts/CuttingMinigame/DisplayScore.gd" id="7_vanh3"]
 
 [node name="CuttingMinigame" type="Node2D" unique_id=373928647]
@@ -29,12 +31,16 @@ texture = ExtResource("2_l1tuc")
 position = Vector2(-16, 0)
 scale = Vector2(0.5, 0.4)
 texture = ExtResource("3_ld87t")
+script = ExtResource("4_l1tuc")
 
 [node name="Knife" type="Sprite2D" parent="." unique_id=1030357170]
 position = Vector2(-388, -27)
 scale = Vector2(0.4, 0.5)
 texture = ExtResource("5_vwb10")
 script = ExtResource("6_kmf5q")
+
+[node name="Cut" type="AudioStreamPlayer2D" parent="Knife" unique_id=264484488]
+stream = ExtResource("7_ld87t")
 
 [node name="CuttingGuidline1" type="Sprite2D" parent="." unique_id=1063980576]
 position = Vector2(-100, 16)
