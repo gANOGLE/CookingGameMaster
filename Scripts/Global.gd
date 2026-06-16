@@ -2,7 +2,7 @@ extends Node2D
 
 #CustomerStuff
 var PossibleOrders = ["Sandwich"]
-var CustomerName = ""
+var CustomerName = "" 
 var SkinColor = 0
 var Face = 0
 var Hair = 0
