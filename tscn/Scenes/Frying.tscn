@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://drlvvbd1idy7t"]
+
+[ext_resource type="Texture2D" uid="uid://bf5h5vhmvmc7o" path="res://Assets/Background.png" id="1_w8p1g"]
+[ext_resource type="Texture2D" uid="uid://d2g04vh600nan" path="res://Assets/Steak.webp" id="2_6x5yq"]
+[ext_resource type="Script" uid="uid://dbwwr6edwr3mv" path="res://tscn/Scenes/SteakCook.gd" id="3_fr0qx"]
+[ext_resource type="Texture2D" uid="uid://bks8jdggcylpy" path="res://Assets/RawSteak.webp" id="4_mvupb"]
+
+[node name="Frying" type="Node2D" unique_id=705174953]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=254186497]
+z_index = 1000
+
+[node name="Background" type="TextureRect" parent="." unique_id=678354425]
+offset_left = -642.0
+offset_top = -383.0
+offset_right = 645.0
+offset_bottom = 364.0
+scale = Vector2(0.9851568, 1.0043671)
+texture = ExtResource("1_w8p1g")
+
+[node name="SteakUnderlay" type="Sprite2D" parent="." unique_id=1722958616]
+position = Vector2(-16, 0)
+scale = Vector2(0.5, 0.4)
+texture = ExtResource("2_6x5yq")
+script = ExtResource("3_fr0qx")
+
+[node name="RawSteak" type="Sprite2D" parent="SteakUnderlay" unique_id=2116355212]
+texture = ExtResource("4_mvupb")
+
+[node name="SteakOverlay" type="Sprite2D" parent="SteakUnderlay/RawSteak" unique_id=50047821]
+self_modulate = Color(1, 1, 1, 0.49019608)
+texture = ExtResource("2_6x5yq")
